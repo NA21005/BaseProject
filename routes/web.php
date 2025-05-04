@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\Roles\PermisoController;
 use App\Http\Controllers\Backend\Perfil\PerfilController;
 use App\Http\Controllers\Backend\Configuracion\ConfiguracionController;
 use App\Http\Controllers\Backend\Registro\RegistroController;
+use App\Http\Controllers\Backend\Soap\NumberToWordsController;
 use App\Http\Controllers\Backend\XMLToJsonController;
 
 
@@ -57,7 +58,15 @@ Route::get('sin-permisos', [ControlController::class,'indexSinPermiso'])->name('
 
 Route::get('/admin/dashboard', [DashboardController::class,'vistaDashboard'])->name('admin.dashboard.index');
 
+// --- SOAP NUMBER TO WORDS ---
+
+// Ruta para mostrar la vista inicial
+Route::get('/number-to-words', [NumberToWordsController::class, 'index'])->name('number.to.words');
+
+// Ruta para convertir un número a palabras
+Route::post('/number-to-words', [NumberToWordsController::class, 'convert'])->name('number.to.words.convert');
 
 // --- CONVERSION XML A JSON ---
 Route::get('/admin/convertir-xml-a-json', [XMLToJsonController::class,'convertXMLToJson'])->name('admin.convertir-xml-a-json');
-Route::get('/admin/mostrar-json', [XMLToJsonController::class,'showJson'])->name('admin.mostrar-json');
+Route::get('/admin/mostrar-json', [XMLToJsonController::class,'showJson'])->name('admin.mostrar-json');// Ruta para convertir un número a palabras
+
