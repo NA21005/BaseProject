@@ -70,3 +70,5 @@ Route::post('/number-to-words', [NumberToWordsController::class, 'convert'])->na
 Route::get('/admin/convertir-xml-a-json', [XMLToJsonController::class,'convertXMLToJson'])->name('admin.convertir-xml-a-json');
 Route::get('/admin/mostrar-json', [XMLToJsonController::class,'showJson'])->name('admin.mostrar-json');// Ruta para convertir un número a palabras
 
+Route::get('/admin/mostrar-tabla', [XMLToJsonController::class,'showTable'])->name('admin.mostrar-tabla'); //Mostrar tabla de empleados
+

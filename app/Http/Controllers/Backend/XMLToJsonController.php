@@ -37,7 +37,6 @@ class XMLToJsonController extends Controller
 
     public function convertXMLToJson()
     {
-        dd(Storage::disk()->allFiles());
         return view(
             'frontend.xml.showXmlAndJsonFormat',
             [
@@ -58,4 +57,14 @@ class XMLToJsonController extends Controller
         return response()->json($data, 200);
 
     }
+
+    public function showTable() // funcion mostrar tabla
+    {
+        // Si el contenido es una cadena JSON lo decodificamos
+        $empleados = json_decode($this->contenido_json, true); // true para obtener un array en lugar de un objeto
+
+        return view('frontend.xml.showTable', ['empleados' => $empleados]);
+    }
+    
 }
+
