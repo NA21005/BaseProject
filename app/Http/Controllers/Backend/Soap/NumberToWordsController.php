@@ -10,7 +10,7 @@ class NumberToWordsController extends Controller
     // Método para mostrar la vista inicial
     public function index()
     {
-        return view('number_to_words');
+        return view('frontend.soap.number_to_words');
     }
 
     // Método para convertir un número a palabras
@@ -39,7 +39,7 @@ class NumberToWordsController extends Controller
         }
 
         // Retorno de la vista con el resultado de la conversión
-        return view('number_to_words', [
+        return view('frontend.soap.number_to_words', [
             'result' => $words,
             'input' => $request->number
         ]);
